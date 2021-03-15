@@ -11,7 +11,7 @@ public class Main {
         GaussSolution gauss = new GaussSolution();
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("\tYasinGauss");
+        System.out.println("\tYasin");
 
         while(flag) {
             System.out.println("____________________________________________________________________");

@@ -2,30 +2,23 @@ package algo.lab1;
 
 public class GaussSolution {
 
-    double[][] arrayDefault = {{0.80, 1.61, 3.76, 1.75},
+    double[][] arrayDefault = {
+            {0.80, 1.61, 3.76, 1.75},
             {2.19, 1.26, 0.94, 1.29},
             {0.93, 2.38, 4.02, -2.50}};
 
-    double[][] array;
 
     public void calcGauss(boolean modeDefault) {
 
+        double[][] array;
+
         System.out.println("\tYasinGauss");
 
-        Gauss gauss = new Gauss();
         System.out.println("____________________________________________________________________");
+        Gauss.str = 3;
+        Gauss.clm = 4;
 
-        if (modeDefault) {
-            System.out.println("____________________________________________________________________");
-            System.out.println(" >>> Creating Matrix for variant 26: \n");
-            gauss.printMatrix(arrayDefault, 3, 4);
-            gauss.determinant(arrayDefault);
-            array = arrayDefault;
-        } else {
-            System.out.println("____________________________________________________________________");
-            array = gauss.initMatrix(3, 4);
-            gauss.printMatrix(array, 3, 4);
-        }
+        array = Gauss.selectOptionMode(modeDefault, arrayDefault);
 
         double[] tempLine = new double[4];
 
@@ -39,7 +32,7 @@ public class GaussSolution {
         for (int j = 0; j < 4; j++) {
             tempArray[0][j] /= tempValue;
         }
-        gauss.printMatrix(tempArray, 3, 4);
+        Gauss.printMatrix(tempArray);
 
         System.out.println(" From the 2 line subtract the 1 line multiplied by [1][0]");
         tempValue = tempArray[1][0];
@@ -49,7 +42,7 @@ public class GaussSolution {
         for (int j = 0; j < 4; j++) {
             tempArray[1][j] -= tempLine[j];
         }
-        gauss.printMatrix(tempArray, 3, 4);
+        Gauss.printMatrix(tempArray);
 
         System.out.println(" From the 3 line subtract the 1 line multiplied by [2][0]");
 
@@ -60,7 +53,7 @@ public class GaussSolution {
         for (int j = 0; j < 4; j++) {
             tempArray[2][j] -= tempLine[j];
         }
-        gauss.printMatrix(tempArray, 3, 4);
+        Gauss.printMatrix(tempArray);
 
         System.out.println("Divide the 2 line by [1][1]");
 
@@ -68,7 +61,7 @@ public class GaussSolution {
         for (int j = 0; j < 4; j++) {
             tempArray[1][j] /= tempValue;
         }
-        gauss.printMatrix(tempArray, 3, 4);
+        Gauss.printMatrix(tempArray);
 
         System.out.println("From the 1 line subtract the 2, multiplied by [0][1]");
 
@@ -80,7 +73,7 @@ public class GaussSolution {
             tempArray[0][j] -= tempLine[j];
         }
 
-        gauss.printMatrix(tempArray, 3, 4);
+        Gauss.printMatrix(tempArray);
 
         System.out.println("From the 3 line subtract the 2, multiplied by [1][2]");
 
@@ -92,14 +85,14 @@ public class GaussSolution {
             tempArray[2][j] -= tempLine[j];
         }
 
-        gauss.printMatrix(tempArray, 3, 4);
+        Gauss.printMatrix(tempArray);
 
         System.out.println("Divide the 3 line by [2][2]");
         tempValue = tempArray[2][2];
         for (int j = 0; j < 4; j++) {
             tempArray[2][j] /= tempValue;
         }
-        gauss.printMatrix(tempArray, 3, 4);
+        Gauss.printMatrix(tempArray);
 
         System.out.println("From the 1 line subtract the 3, multiplied by [0][2]");
         tempValue = tempArray[0][2];
@@ -109,7 +102,7 @@ public class GaussSolution {
         for (int j = 0; j < 4; j++) {
             tempArray[0][j] -= tempLine[j];
         }
-        gauss.printMatrix(tempArray, 3, 4);
+        Gauss.printMatrix(tempArray);
 
         System.out.println("From the 2 line subtract the 3, multiplied by [1][2]");
         tempValue = tempArray[1][2];
@@ -120,9 +113,9 @@ public class GaussSolution {
             tempArray[1][j] -= tempLine[j];
         }
 
-        gauss.printMatrix(tempArray, 3, 4);
+        Gauss.printMatrix(tempArray);
         System.out.print("\n");
 
-        gauss.checkResult(array, tempArray);
+        Gauss.checkResult(array, tempArray);
     }
 }

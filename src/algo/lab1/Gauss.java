@@ -4,30 +4,47 @@ import java.util.Scanner;
 
 public class Gauss {
 
-    public double[][] initMatrix(int clm, int str){
+    public static int str;
+    public static int clm;
+
+    public static double[][] selectOptionMode(boolean mode, double[][] arrayDef){
+        if (mode) {
+            System.out.println("____________________________________________________________________");
+            System.out.println(" >>> Creating Matrix for variant 26: \n");
+            Gauss.printMatrix(arrayDef);
+            Gauss.determinant(arrayDef);
+            return arrayDef;
+        } else {
+            double[][] array = Gauss.initMatrix();
+            Gauss.printMatrix(array);
+            Gauss.determinant(arrayDef);
+            return array;
+        }
+    }
+
+    public static double[][] initMatrix(){
         Scanner sc = new Scanner(System.in);
 
-        double [][] array = new double[clm][str];
+        double [][] array = new double[str][clm];
 
-        System.out.println("WARNING: if your Matrix (with answers) is not 3x4,\n" +
-                             "the program will crash.\n");
-
-        for(int i = 0; i < clm; i++){
-            for(int j = 0; j < str; j++){
+        for(int i = 0; i < str; i++){
+            for(int j = 0; j < clm; j++){
                 System.out.format(" a[%d][%d]: ", i, j);
                 array[i][j] = sc.nextDouble();
             }
         }
         System.out.println("____________________________________________________________________");
+
         return array;
     }
 
-    public void printMatrix(double [][]array, int clm, int str){
+    public static void printMatrix(double [][]array){
         System.out.println("  Array: ");
-        for(int i = 0; i < clm; i++) {
+        for(int i = 0; i < str; i++) {
             System.out.print("\n");
-            for (int j = 0; j < str; j++) {
-                System.out.format(" a[%d][%d]: ", i, j);
+            for (int j = 0; j < clm; j++) {
+                System.out.print("\t");
+                //System.out.format(" a[%d][%d]: ", i, j);
                 System.out.format("%.2f",array[i][j]);
                 System.out.print("\t");
             }
@@ -36,7 +53,7 @@ public class Gauss {
         System.out.println("____________________________________________________________________");
     }
 
-    public void checkResult(double [][] matrixDflt, double [][] matrixRslt){
+    public static void checkResult(double [][] matrixDflt, double [][] matrixRslt){
         System.out.println(" Checking results: ");
 
         System.out.println(" Input Matrix: ");
@@ -76,7 +93,7 @@ public class Gauss {
         System.out.println("Task is done");
     }
 
-    public void determinant(double [][]array){
+    public static void determinant(double[][] array){
         double determinant;
         double x,y,z;
         double[][] matrix = new double[3][3];
