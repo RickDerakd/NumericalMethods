@@ -7,18 +7,31 @@ public class GaussSolution {
             {2.19, 1.26, 0.94, 1.29},
             {0.93, 2.38, 4.02, -2.50}};
 
+    double[][] array;
 
     public void calcGauss(boolean modeDefault) {
 
-        double[][] array;
 
         System.out.println("\tYasinGauss");
 
         System.out.println("____________________________________________________________________");
+
+        //initializing matrix aspect ratio
         Gauss.str = 3;
         Gauss.clm = 4;
 
-        array = Gauss.selectOptionMode(modeDefault, arrayDefault);
+        //check switch, if the mode is true, then that program will work with the array by default
+        if (modeDefault) {
+            System.out.println("____________________________________________________________________");
+            System.out.println(" >>> Creating Matrix for variant 26: \n");
+            Gauss.printMatrix(arrayDefault);
+            Gauss.determinant(arrayDefault);
+        } else {
+            array = Gauss.initMatrix();
+            Gauss.printMatrix(array);
+            Gauss.determinant(array);
+        }
+
 
         double[] tempLine = new double[4];
 

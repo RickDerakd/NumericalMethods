@@ -7,21 +7,7 @@ public class Gauss {
     public static int str;
     public static int clm;
 
-    public static double[][] selectOptionMode(boolean mode, double[][] arrayDef){
-        if (mode) {
-            System.out.println("____________________________________________________________________");
-            System.out.println(" >>> Creating Matrix for variant 26: \n");
-            Gauss.printMatrix(arrayDef);
-            Gauss.determinant(arrayDef);
-            return arrayDef;
-        } else {
-            double[][] array = Gauss.initMatrix();
-            Gauss.printMatrix(array);
-            Gauss.determinant(arrayDef);
-            return array;
-        }
-    }
-
+    //method of data input a matrix
     public static double[][] initMatrix(){
         Scanner sc = new Scanner(System.in);
 
@@ -93,6 +79,7 @@ public class Gauss {
         System.out.println("Task is done");
     }
 
+    //determinant method working with a 3-by-3 matrix
     public static void determinant(double[][] array){
         double determinant;
         double x,y,z;

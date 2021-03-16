@@ -5,24 +5,24 @@ import algo.lab1.Gauss;
 public class IterationSolution {
 
     double[][] arrayDefault = {
-            {0.80, 1.61, 3.76, 1.75, 1},
-            {2.19, 1.26, 0.94, 1.2, 1},
-            {0.93, 2.38, 4.02, -2.50, 1},
-            {0.93, 2.38, 4.02, -2.50, 1}};
-
+            {5, 1, -1, 1},
+            {1, -4, 1, -1},
+            {-1, 1, 4, 1},
+            {1, 2, 1, -5}};
 
     public void calcIteration(boolean mode) {
 
-        //double[][] array = new double[4][5];
+        double[][] array = new double[4][4];
+
+        Gauss.str = 4;
+        Gauss.clm = 4;
 
         System.out.println("\tYasinIter");
         System.out.println("____________________________________________________________________");
 
-        Gauss.str = 4;
-        Gauss.clm = 5;
+    }
 
-        //array = Gauss.selectOptionMode(mode, arrayDefault);
-        //ToDo dopilit eto
+    public void DeterminantQuadro(boolean mode){
 
     }
 }

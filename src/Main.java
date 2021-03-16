@@ -1,4 +1,6 @@
+import algo.lab1.Gauss;
 import algo.lab1.GaussSolution;
+import algo.lab2.IterationSolution;
 
 import java.util.*;
 
@@ -56,7 +58,8 @@ public class Main {
                     break;
                 }
                 case "2":{
-
+                    IterationSolution iter = new IterationSolution();
+                    iter.calcIteration(true);
                 }
                 case "3":{
 
