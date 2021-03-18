@@ -11,14 +11,12 @@ public class GaussSolution {
 
     public void calcGauss(boolean modeDefault) {
 
-
         System.out.println("\tYasinGauss");
 
         System.out.println("____________________________________________________________________");
 
         //initializing matrix aspect ratio
         Gauss.str = 3;
-        Gauss.clm = 4;
 
         //check switch, if the mode is true, then that program will work with the array by default
         if (modeDefault) {
@@ -26,6 +24,7 @@ public class GaussSolution {
             System.out.println(" >>> Creating Matrix for variant 26: \n");
             Gauss.printMatrix(arrayDefault);
             Gauss.determinant(arrayDefault);
+            array = arrayDefault;
         } else {
             array = Gauss.initMatrix();
             Gauss.printMatrix(array);

@@ -4,8 +4,8 @@ import java.util.Scanner;
 
 public class Gauss {
 
-    public static int str;
-    public static int clm;
+    public static int str = 4;
+    public static int clm = 4;
 
     //method of data input a matrix
     public static double[][] initMatrix(){
@@ -25,7 +25,7 @@ public class Gauss {
     }
 
     public static void printMatrix(double [][]array){
-        System.out.println("  Array: ");
+        System.out.println("  Matrix: ");
         for(int i = 0; i < str; i++) {
             System.out.print("\n");
             for (int j = 0; j < clm; j++) {
@@ -57,19 +57,16 @@ public class Gauss {
         System.out.println("Results: ");
 
         double sum = 0;
-        double [] Result = new double[3];
-        double [] Input = new double[3];
+
         double value;
 
         System.out.print("\n");
 
         for(int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
-                Input[i] = matrixDflt[i][3];
                 System.out.print("\t");
                 value = matrixRslt[j][3] * matrixDflt[i][j];
                 sum += value;
-                Result[i] = sum;
             }
             System.out.format("%.2f", sum);
             System.out.print("\t");

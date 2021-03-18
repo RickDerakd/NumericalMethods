@@ -9,7 +9,6 @@ public class Main {
     public static void main(String [] args){
 
         boolean flag = true;
-        String pointerG;
         GaussSolution gauss = new GaussSolution();
         Scanner sc = new Scanner(System.in);
 
@@ -17,7 +16,7 @@ public class Main {
 
         while(flag) {
             System.out.println("____________________________________________________________________");
-            System.out.println("    Select operating mode: ");
+            System.out.println("    Select operating mode: \n");
             System.out.println("[1] Gauss Calculation (3x4 matrix). ");
             System.out.println("[2] Iteration method. ");
             System.out.println("[3] [no actions yet] ");
@@ -33,12 +32,12 @@ public class Main {
                 }
                 case "1":{
                     System.out.println("____________________________________________________________________");
-                    System.out.println("    Select operating mode: ");
+                    System.out.println("    Select operating mode:  \n");
                     System.out.println("[1] Variant 26 Calculation . ");
                     System.out.println("[2] Calculation with variable values. ");
                     System.out.println("[0] Previous menu. ");
-                    pointerG = sc.next();
-                    switch (pointerG){
+                    String flag1 = sc.next();
+                    switch (flag1) {
                         case "0":{
                             break;
                         }
@@ -51,7 +50,7 @@ public class Main {
                             break;
                         }
                         default:{
-                            System.out.println("Error code!");
+                            System.out.println("ERROR CODE!");
                             break;
                         }
                     }
@@ -59,7 +58,30 @@ public class Main {
                 }
                 case "2":{
                     IterationSolution iter = new IterationSolution();
-                    iter.calcIteration(true);
+                    System.out.println("____________________________________________________________________");
+                    System.out.println("    Select operating mode: \n");
+                    System.out.println("[1] Default Calculation. ");
+                    System.out.println("[2] Calculation with variable values. ");
+                    System.out.println("[0] Previous menu. ");
+                    String flag1 = sc.next();
+                    switch (flag1) {
+                        case "0": {
+                            break;
+                        }
+                        case "1": {
+                            iter.calcIteration(true);
+                            break;
+                        }
+                        case "2": {
+                            iter.calcIteration(false);
+                            break;
+                        }
+                        default: {
+                            System.out.println("ERROR CODE!");
+                            break;
+                        }
+                    }
+                    break;
                 }
                 case "3":{
 
@@ -68,7 +90,7 @@ public class Main {
 
                 }
                 default:{
-                    System.out.println("Error: Wrong number.");
+                    System.out.println("ERROR CODE: Wrong number.");
                     break;
                 }
             }
