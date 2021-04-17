@@ -16,19 +16,20 @@ public class GaussSolution {
         System.out.println("____________________________________________________________________");
 
         //initializing matrix aspect ratio
-        Gauss.str = 3;
+        GaussUtil gauss = new GaussUtil();
+        gauss.setStr(3);
 
         //check switch, if the mode is true, then that program will work with the array by default
         if (modeDefault) {
             System.out.println("____________________________________________________________________");
             System.out.println(" >>> Creating Matrix for variant 26: \n");
-            Gauss.printMatrix(arrayDefault);
-            Gauss.determinant(arrayDefault);
+            gauss.printMatrix(arrayDefault);
+            gauss.determinant(arrayDefault);
             array = arrayDefault;
         } else {
-            array = Gauss.initMatrix();
-            Gauss.printMatrix(array);
-            Gauss.determinant(array);
+            array = gauss.initMatrix();
+            gauss.printMatrix(array);
+            gauss.determinant(array);
         }
 
 
@@ -44,7 +45,7 @@ public class GaussSolution {
         for (int j = 0; j < 4; j++) {
             tempArray[0][j] /= tempValue;
         }
-        Gauss.printMatrix(tempArray);
+        gauss.printMatrix(tempArray);
 
         System.out.println(" From the 2 line subtract the 1 line multiplied by [1][0]");
         tempValue = tempArray[1][0];
@@ -54,7 +55,7 @@ public class GaussSolution {
         for (int j = 0; j < 4; j++) {
             tempArray[1][j] -= tempLine[j];
         }
-        Gauss.printMatrix(tempArray);
+        gauss.printMatrix(tempArray);
 
         System.out.println(" From the 3 line subtract the 1 line multiplied by [2][0]");
 
@@ -65,7 +66,7 @@ public class GaussSolution {
         for (int j = 0; j < 4; j++) {
             tempArray[2][j] -= tempLine[j];
         }
-        Gauss.printMatrix(tempArray);
+        gauss.printMatrix(tempArray);
 
         System.out.println("Divide the 2 line by [1][1]");
 
@@ -73,7 +74,7 @@ public class GaussSolution {
         for (int j = 0; j < 4; j++) {
             tempArray[1][j] /= tempValue;
         }
-        Gauss.printMatrix(tempArray);
+        gauss.printMatrix(tempArray);
 
         System.out.println("From the 1 line subtract the 2, multiplied by [0][1]");
 
@@ -85,7 +86,7 @@ public class GaussSolution {
             tempArray[0][j] -= tempLine[j];
         }
 
-        Gauss.printMatrix(tempArray);
+        gauss.printMatrix(tempArray);
 
         System.out.println("From the 3 line subtract the 2, multiplied by [1][2]");
 
@@ -97,14 +98,14 @@ public class GaussSolution {
             tempArray[2][j] -= tempLine[j];
         }
 
-        Gauss.printMatrix(tempArray);
+        gauss.printMatrix(tempArray);
 
         System.out.println("Divide the 3 line by [2][2]");
         tempValue = tempArray[2][2];
         for (int j = 0; j < 4; j++) {
             tempArray[2][j] /= tempValue;
         }
-        Gauss.printMatrix(tempArray);
+        gauss.printMatrix(tempArray);
 
         System.out.println("From the 1 line subtract the 3, multiplied by [0][2]");
         tempValue = tempArray[0][2];
@@ -114,7 +115,7 @@ public class GaussSolution {
         for (int j = 0; j < 4; j++) {
             tempArray[0][j] -= tempLine[j];
         }
-        Gauss.printMatrix(tempArray);
+        gauss.printMatrix(tempArray);
 
         System.out.println("From the 2 line subtract the 3, multiplied by [1][2]");
         tempValue = tempArray[1][2];
@@ -125,9 +126,9 @@ public class GaussSolution {
             tempArray[1][j] -= tempLine[j];
         }
 
-        Gauss.printMatrix(tempArray);
+        gauss.printMatrix(tempArray);
         System.out.print("\n");
 
-        Gauss.checkResult(array, tempArray);
+        gauss.checkResult(array, tempArray);
     }
 }

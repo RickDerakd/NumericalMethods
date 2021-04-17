@@ -1,6 +1,6 @@
 package algo.lab2;
 
-import algo.lab1.Gauss;
+import algo.lab1.GaussUtil;
 
 import java.util.Scanner;
 
@@ -21,6 +21,7 @@ public class IterationSolution {
     public void calcIteration(boolean mode) {
 
         Scanner sc = new Scanner(System.in);
+        GaussUtil gauss = new GaussUtil();
         boolean flagCheck = true;
         double sum = 0;
 
@@ -28,9 +29,9 @@ public class IterationSolution {
         System.out.println("\tYasinIter");
         System.out.println("____________________________________________________________________");
 
-        if (!mode) arrayDefault = Gauss.initMatrix();
+        if (!mode) arrayDefault = gauss.initMatrix();
 
-        Gauss.printMatrix(arrayDefault);
+        gauss.printMatrix(arrayDefault);
 
         double detCheck = Determinant.determinant(arrayDefault, 4);
 
@@ -96,7 +97,7 @@ public class IterationSolution {
                 System.arraycopy(iterRes, 0, approach, 0, approach.length);
 
                 System.out.println("____________________________________________________________________");
-                System.out.println("____________________________________________________________________\n");
+                System.out.println("\n\n\n");
                 for (int i = 0; i < iterRes.length; i++) {
                     System.out.printf(" Output of step[%d], iteration [%d]: %.4f \n", i + 1, p, iterRes[i]);
                 }

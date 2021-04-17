@@ -2,13 +2,30 @@ package algo.lab1;
 
 import java.util.Scanner;
 
-public class Gauss {
+public class GaussUtil {
 
-    public static int str = 4;
-    public static int clm = 4;
+    private int str = 4;
+    private int clm = 4;
+
+    public int getStr() {
+        return str;
+    }
+
+    public void setStr(int str) {
+        this.str = str;
+    }
+
+    public int getClm() {
+        return clm;
+    }
+
+    public void setClm(int clm) {
+        this.clm = clm;
+    }
+
 
     //method of data input a matrix
-    public static double[][] initMatrix(){
+    public double[][] initMatrix(){
         Scanner sc = new Scanner(System.in);
 
         double [][] array = new double[str][clm];
@@ -24,7 +41,7 @@ public class Gauss {
         return array;
     }
 
-    public static void printMatrix(double [][]array){
+    public void printMatrix(double [][]array){
         System.out.println("  Matrix: ");
         for(int i = 0; i < str; i++) {
             System.out.print("\n");
@@ -39,7 +56,7 @@ public class Gauss {
         System.out.println("____________________________________________________________________");
     }
 
-    public static void checkResult(double [][] matrixDflt, double [][] matrixRslt){
+    public void checkResult(double [][] matrixDflt, double [][] matrixRslt){
         System.out.println(" Checking results: ");
 
         System.out.println(" Input Matrix: ");
@@ -77,7 +94,7 @@ public class Gauss {
     }
 
     //determinant method working with a 3-by-3 matrix
-    public static void determinant(double[][] array){
+    public void determinant(double[][] array){
         double determinant;
         double x,y,z;
         double[][] matrix = new double[3][3];

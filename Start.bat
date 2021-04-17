@@ -24,7 +24,7 @@ color 0A
 	timeout /t 1 /nobreak > NUL
 	java -jar NumericalMethods.jar
 	if %errorlevel%==1 (
-	    echo System: Java was fucked...
+	    echo System: Java core jammed...
 	)
 	pause
 	exit
