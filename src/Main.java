@@ -1,6 +1,7 @@
 import algo.lab1.GaussSolution;
 import algo.lab2.IterationSolution;
 import algo.lab3.DichotomySolution;
+import algo.lab4.InterpolationSolution;
 
 import java.util.*;
 
@@ -20,8 +21,9 @@ public class Main {
             System.out.println("[1] Gauss Calculation (3x4 matrix). ");
             System.out.println("[2] Iteration method. ");
             System.out.println("[3] Dichotomy method. ");
-            System.out.println("[4] [no actions yet] ");
+            System.out.println("[4] Interpolation method. ");
             System.out.println("[5] [no actions yet] ");
+            System.out.println("[6] [no actions yet] ");
             System.out.println("[0] Exit. ");
 
             String switch_on = sc.next();
@@ -92,10 +94,16 @@ public class Main {
                     break;
                 }
                 case "4":{
-                    System.out.println("Opps!");
+                    InterpolationSolution solution = new InterpolationSolution();
+                    System.out.println("____________________________________________________________________");
+                    solution.calcInterpolation();
                     break;
                 }
                 case "5":{
+                    System.out.println("Opps!");
+                    break;
+                }
+                case "6":{
                     System.out.println("Opps! try another button!");
                     break;
                 }
