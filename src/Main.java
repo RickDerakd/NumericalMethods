@@ -2,6 +2,8 @@ import algo.lab1.GaussSolution;
 import algo.lab2.IterationSolution;
 import algo.lab3.DichotomySolution;
 import algo.lab4.InterpolationSolution;
+import algo.lab5.ApproximationSolution;
+import algo.lab6.FuncData;
 
 import java.util.*;
 
@@ -10,7 +12,13 @@ public class Main {
     public static void main(String [] args){
 
         boolean flag = true;
+        FuncData calcFunc = new FuncData();
         GaussSolution gauss = new GaussSolution();
+        IterationSolution iter = new IterationSolution();
+        DichotomySolution dicho = new DichotomySolution();
+        InterpolationSolution inter = new InterpolationSolution();
+        ApproximationSolution approx = new ApproximationSolution();
+
         Scanner sc = new Scanner(System.in);
 
         System.out.println("\tYasin");
@@ -22,8 +30,10 @@ public class Main {
             System.out.println("[2] Iteration method. ");
             System.out.println("[3] Dichotomy method. ");
             System.out.println("[4] Interpolation method. ");
-            System.out.println("[5] [no actions yet] ");
-            System.out.println("[6] [no actions yet] ");
+            System.out.println("[5] Approximation method. ");
+            System.out.println("[6] Rectangle method. ");
+            System.out.println("[7] Trapezoid method. ");
+            System.out.println("[8] Simpson method. ");
             System.out.println("[0] Exit. ");
 
             String switch_on = sc.next();
@@ -61,7 +71,6 @@ public class Main {
                     break;
                 }
                 case "2":{
-                    IterationSolution iter = new IterationSolution();
                     System.out.println("____________________________________________________________________");
                     System.out.println("    Select operating mode: \n");
                     System.out.println("[1] Default Calculation. ");
@@ -88,23 +97,36 @@ public class Main {
                     break;
                 }
                 case "3":{
-                    DichotomySolution dichotomy = new DichotomySolution();
                     System.out.println("____________________________________________________________________");
-                    dichotomy.calcDichotomy();
+                    dicho.calcDichotomy();
                     break;
                 }
                 case "4":{
-                    InterpolationSolution solution = new InterpolationSolution();
                     System.out.println("____________________________________________________________________");
-                    solution.calcInterpolation();
+                    inter.calcInterpolation();
                     break;
                 }
                 case "5":{
-                    System.out.println("Opps!");
+                    System.out.println("____________________________________________________________________");
+                    approx.calcApproximation();
                     break;
                 }
                 case "6":{
-                    System.out.println("Opps! try another button!");
+                    System.out.println("____________________________________________________________________");
+                    System.out.println(" Rectangle calculation. ");
+                    calcFunc.init( 1);
+                    break;
+                }
+                case "7":{
+                    System.out.println("____________________________________________________________________");
+                    System.out.println(" Trapezoid calculation. ");
+                    calcFunc.init( 2);
+                    break;
+                }
+                case "8":{
+                    System.out.println("____________________________________________________________________");
+                    System.out.println(" Simpson calculation. ");
+                    calcFunc.init( 3);
                     break;
                 }
                 default:{

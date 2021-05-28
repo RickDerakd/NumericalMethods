@@ -38,7 +38,10 @@ public class InterpolationSolution {
                     System.out.println("ERROR CODE!");
                 }else flag = false;
             }
-        }else System.out.println(">>> Standard interval selected [-2;5]");
+        }else System.out.println(">>> Standard interval selected [-2;5]\n");
+        System.out.println("____________________________________________________________________");
+        data.printX();
+        data.printFX();
         System.out.println("____________________________________________________________________");
     }
 

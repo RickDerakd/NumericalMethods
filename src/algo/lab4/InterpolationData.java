@@ -11,28 +11,18 @@ public class InterpolationData {
 
     Scanner sc = new Scanner(System.in);
 
-    public void printFX(){
-        System.out.println("F(X) = " + dataFX);
-    }
-
-    public void printX(){
-        System.out.println("X = " + dataX);
-    }
-
     public ArrayList<Double> getDataX() {
         return dataX;
     }
 
-    public void setDataX(ArrayList<Double> dataX) {
-        this.dataX = dataX;
+    public ArrayList<Double> getDataFX() { return dataFX; }
+
+    public void setDataX(double a,double b,double c,double d,double e) {
+        dataX = new ArrayList<>(Arrays.asList(a, b, c, d, e));
     }
 
-    public ArrayList<Double> getDataFX() {
-        return dataFX;
-    }
-
-    public void setDataFX(ArrayList<Double> dataFX) {
-        this.dataFX = dataFX;
+    public void setDataFX(double a,double b,double c,double d,double e) {
+        dataFX = new ArrayList<>(Arrays.asList(a, b, c, d, e));
     }
 
     public void setAllX(){
@@ -51,5 +41,13 @@ public class InterpolationData {
             input = sc.nextDouble();
             dataFX.add(input);
         }
+    }
+
+    public void printFX(){
+        System.out.println("  F(X) = " + dataFX);
+    }
+
+    public void printX(){
+        System.out.println("  X = " + dataX);
     }
 }
