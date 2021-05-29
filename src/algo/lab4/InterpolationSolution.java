@@ -21,7 +21,7 @@ public class InterpolationSolution {
             data.setAllFX();
         } else System.out.println(">>> Standard data selected");
 
-        System.out.println("Set standard interval (-2;5)? [y/n]");
+        System.out.println("Set standard interval (" + left + ";" + right + ")? [y/n]");
         checkInput = sc.nextLine();
         if (checkInput.equals("n")) {
             while (flag) {
@@ -38,7 +38,7 @@ public class InterpolationSolution {
                     System.out.println("ERROR CODE!");
                 }else flag = false;
             }
-        }else System.out.println(">>> Standard interval selected [-2;5]\n");
+        }else System.out.println(">>> Standard interval selected (" + left + "; " + right + ")\n");
         System.out.println("____________________________________________________________________");
         data.printX();
         data.printFX();

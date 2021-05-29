@@ -4,8 +4,8 @@ import java.util.Scanner;
 
 public class FuncData {
 
-    double low = 0;
-    double height = 1.2;
+    double low = 2;
+    double height = 4.4;
     int segment = 10;
 
     public void init(int methodSelect){
@@ -31,17 +31,16 @@ public class FuncData {
         Scanner sc = new Scanner(System.in);
 
         System.out.println("____________________________________________________________________");
-        System.out.println("Set a standard number of segments (10) [y/n]");
+        System.out.println("Set a standard number of segments (" + segment + ") [y/n]");
         String checkInput = sc.nextLine();
 
         if (checkInput.equals("n")) {
             System.out.println(" Enter the standard number of segments: ");
             checkInput = sc.nextLine();
             segment = Integer.parseInt(checkInput);
-        } else System.out.println(">>> Segments = 10");
-
-
-        System.out.println("Standard range selected (0; 1,2)? [y/n]");
+        } else System.out.println(">>> Segments = " + segment );
+        System.out.println("____________________________________________________________________");
+        System.out.println("Standard range selected (" + low + "; " + height + ")? [y/n]");
         checkInput = sc.nextLine();
         if (checkInput.equals("n")) {
             while (flag) {
@@ -58,12 +57,12 @@ public class FuncData {
                     System.out.println("ERROR CODE!");
                 }else flag = false;
             }
-        }else System.out.println(">>> Standard range selected [0;10]");
+        }else System.out.println(">>> Standard range selected (" + low + ";" + height + ")");
         System.out.println("____________________________________________________________________");
     }
 
     public static double equation(double x){
         //26 variant
-        return (((x * x) - 1.3) / (1.2 * x * x * x) + 1);
+        return (((x * x) - 1.3) / ((1.2 * x * x * x) + 1));
     }
 }
