@@ -1,3 +1,3 @@
-#Gaussian method
+# Gaussian method
 
-####the algorithm is implemented in class [GaussSolution](./GaussSolution.java)
+#### the algorithm is implemented in class [GaussSolution](./GaussSolution.java)

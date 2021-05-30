@@ -1,6 +1,7 @@
 
-#Dichotomy method
-####the algorithm is implemented in class [DichotomySolution](./DichotomySolution.java)
+# Dichotomy method
+
+#### the algorithm is implemented in class [DichotomySolution](./DichotomySolution.java)
 
 To begin, the user specifies the range in which the roots will be searched. 
 Then, in steps of 0.1, the values of the range are checked,
@@ -10,14 +11,14 @@ On each such interval, the values of X are sought at a given accuracy
 by finding the average value between the ends of the 
 interval and substituting this value into the equation.
 
-###Checking root isolation interval
+### Checking root isolation interval
 
 We start checking from the second iteration if f(x)
 previous from list of f(x) on each iteration < 0 , and f(x) now > 0,
 or vice versa, then we found intervals where exists roots after that 
 we find the root on each interval.
 
-###Implementation
+### Implementation
 
 On first iteration, we define variables "left" and "right" "boarders",
 "x" that equals (left + right) / 2 "f(a)" and "f(x)" , and "multiple" 

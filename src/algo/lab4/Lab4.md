@@ -1,6 +1,6 @@
-#Interpolation method
+# Interpolation method
 
-####the algorithm is implemented in class [InterpolationSolution](./InterpolationSolution.java)
+#### the algorithm is implemented in class [InterpolationSolution](./InterpolationSolution.java)
 
 The problem is to find the interpolating function F(x) = y, 
 which allows you to find what values the function takes 

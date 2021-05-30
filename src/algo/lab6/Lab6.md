@@ -1,11 +1,11 @@
-#Rectangle method
+# Rectangle method
 
-####the algorithm is implemented in class [RectangleSolution](./RectangleSolution.java)
+#### the algorithm is implemented in class [RectangleSolution](./RectangleSolution.java)
 
-#Trapezoid method
+# Trapezoid method
 
-####the algorithm is implemented in class [TrapezoidSolution](./TrapezoidSolution.java)
+#### the algorithm is implemented in class [TrapezoidSolution](./TrapezoidSolution.java)
 
-#Simpson method
+# Simpson method
 
-####the algorithm is implemented in class [SimpsonSolution](./SimpsonSolution.java)
+#### the algorithm is implemented in class [SimpsonSolution](./SimpsonSolution.java)
