@@ -1,4 +1,3 @@
-
 # Dichotomy method
 
 #### the algorithm is implemented in class [DichotomySolution](./DichotomySolution.java)

@@ -2,15 +2,19 @@
 
 #### the algorithm is implemented in class [IterationSolution](./IterationSolution.java)
 
+### Data used in the program
+
 With this program you can find solutions to systems of equations with 4 variables.
 
 Default coefficients for unknowns are set directly in the program as a two-dimensional array 
-= {{5, 1, -1, 1}, {1, -4, 1, -1}, {-1, 1, 4, 1}, { 1, 2, 1, -5}}.
+= { {5, 1, -1, 1}, {1, -4, 1, -1}, {-1, 1, 4, 1}, { 1, 2, 1, -5} }.
 
 The vector in which the right-hand side of each of the 4 equations
-is given by a separate array b = {3 * m, m-6, 15-m, m + 2};
+is given by a separate array b = {3 * m, m - 6, 15 - m, m + 2};
 
 The initial approximation is given as an approach to the array = {0.7 * m, 1, 2, 0.5};
+
+### Implementation in the program
 
 According to the algorithm, the determinant of the array matrix 
 is first determined by forming zeros below the lower diagonal and 
